@@ -1,0 +1,61 @@
+export const salesData = [
+  { name: "One Piece", sales: 400, year: 2015 },
+  { name: "Naruto", sales: 300, year: 2015 },
+  { name: "Attack on Titan", sales: 180, year: 2015 },
+  { name: "Bleach", sales: 150, year: 2015 },
+  { name: "Dragon Ball", sales: 350, year: 2015 },
+
+  { name: "One Piece", sales: 420, year: 2016 },
+  { name: "Naruto", sales: 310, year: 2016 },
+  { name: "Attack on Titan", sales: 190, year: 2016 },
+  { name: "Bleach", sales: 160, year: 2016 },
+  { name: "Dragon Ball", sales: 360, year: 2016 },
+
+  { name: "One Piece", sales: 430, year: 2017 },
+  { name: "Naruto", sales: 320, year: 2017 },
+  { name: "Attack on Titan", sales: 200, year: 2017 },
+  { name: "Bleach", sales: 170, year: 2017 },
+  { name: "Dragon Ball", sales: 370, year: 2017 },
+
+  { name: "One Piece", sales: 450, year: 2018 },
+  { name: "Naruto", sales: 330, year: 2018 },
+  { name: "Attack on Titan", sales: 210, year: 2018 },
+  { name: "Bleach", sales: 180, year: 2018 },
+  { name: "Dragon Ball", sales: 380, year: 2018 },
+
+  { name: "One Piece", sales: 470, year: 2019 },
+  { name: "Naruto", sales: 340, year: 2019 },
+  { name: "Attack on Titan", sales: 220, year: 2019 },
+  { name: "Bleach", sales: 190, year: 2019 },
+  { name: "Dragon Ball", sales: 390, year: 2019 },
+
+  { name: "One Piece", sales: 490, year: 2020 },
+  { name: "Naruto", sales: 350, year: 2020 },
+  { name: "Attack on Titan", sales: 230, year: 2020 },
+  { name: "Bleach", sales: 200, year: 2020 },
+  { name: "Dragon Ball", sales: 400, year: 2020 },
+
+  { name: "One Piece", sales: 510, year: 2021 },
+  { name: "Naruto", sales: 360, year: 2021 },
+  { name: "Attack on Titan", sales: 240, year: 2021 },
+  { name: "Bleach", sales: 210, year: 2021 },
+  { name: "Dragon Ball", sales: 410, year: 2021 },
+
+  { name: "One Piece", sales: 530, year: 2022 },
+  { name: "Naruto", sales: 370, year: 2022 },
+  { name: "Attack on Titan", sales: 250, year: 2022 },
+  { name: "Bleach", sales: 220, year: 2022 },
+  { name: "Dragon Ball", sales: 420, year: 2022 },
+
+  { name: "One Piece", sales: 550, year: 2023 },
+  { name: "Naruto", sales: 380, year: 2023 },
+  { name: "Attack on Titan", sales: 260, year: 2023 },
+  { name: "Bleach", sales: 230, year: 2023 },
+  { name: "Dragon Ball", sales: 430, year: 2023 },
+
+  { name: "One Piece", sales: 570, year: 2025 },
+  { name: "Naruto", sales: 390, year: 2025 },
+  { name: "Attack on Titan", sales: 270, year: 2025 },
+  { name: "Bleach", sales: 240, year: 2025 },
+  { name: "Dragon Ball", sales: 440, year: 2025 },
+];
