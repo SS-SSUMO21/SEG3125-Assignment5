@@ -59,7 +59,7 @@ const NavigationBar = () => {
     <Navbar bg="dark" variant="dark" expand="sm" fixed="top" className="px-3">
       <Container fluid>
         <Navbar.Brand as={Link} to="/" className="mb-0 text-light fw-bold fs-4">
-          TechCare Repair Services
+          Dashboard
         </Navbar.Brand>
         <div className="d-flex align-items-center ms-auto">
           <Nav variant="pills" className="align-items-center me-4">
