@@ -14,7 +14,7 @@ const NavigationBar = () => {
   const [activeSection, setActiveSection] = useState("");
   const location = useLocation();
   const navigate = useNavigate();
-  const { language, setLanguage, t } = useTranslation();
+  const { setLanguage, t } = useTranslation();
 
 
   // Scroll to section with offset for fixed navbar

@@ -172,17 +172,17 @@ return (
 
         <FormGroup row sx={{ justifyContent: "center", mb: 2 }}>
           <FormControlLabel
-            control={<Checkbox checked={showXAxis} onChange={() => setShowXAxis(!showXAxis)} />}
+            control={<Checkbox checked={showXAxisLine} onChange={() => setShowXAxisLine(!showXAxisLine)} />}
             label={t("xAxis")}
           />
 
           <FormControlLabel
-            control={<Checkbox checked={showYAxis} onChange={() => setShowYAxis(!showYAxis)} />}
+            control={<Checkbox checked={showYAxisLine} onChange={() => setShowYAxisLine(!showYAxisLine)} />}
             label={t("yAxis")}
           />
 
           <FormControlLabel
-            control={<Checkbox checked={showGrid} onChange={() => setShowGrid(!showGrid)} />}
+            control={<Checkbox checked={showGridLine} onChange={() => setShowGridLine(!showGridLine)} />}
             label={t("gridlines")}
           />
         </FormGroup>
