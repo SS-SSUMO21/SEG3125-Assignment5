@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+// import React, { useEffect, useState } from "react";
 import { Navbar, Nav, Dropdown, Container } from "react-bootstrap";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 import { useTranslation } from "../components/useTranslation";
@@ -11,7 +11,7 @@ const sections = [
 
 
 const NavigationBar = () => {
-  const [activeSection, setActiveSection] = useState("");
+  // const [activeSection, setActiveSection] = useState("");
   const location = useLocation();
   const navigate = useNavigate();
   const { setLanguage, t } = useTranslation();
@@ -40,25 +40,25 @@ const NavigationBar = () => {
   };
 
   // Update active section on scroll
-  useEffect(() => {
-    const handleScroll = () => {
-      let current = "";
-      for (const section of sections) {
-        const el = document.getElementById(section.id);
-        if (el) {
-          const rect = el.getBoundingClientRect();
-          if (rect.top <= 120 && rect.bottom > 120) {
-            current = section.id;
-            break;
-          }
-        }
-      }
-      setActiveSection(current);
-    };
-    window.addEventListener("scroll", handleScroll, { passive: true });
-    handleScroll();
-    return () => window.removeEventListener("scroll", handleScroll);
-  }, [location.pathname]);
+  // useEffect(() => {
+  //   const handleScroll = () => {
+  //     let current = "";
+  //     for (const section of sections) {
+  //       const el = document.getElementById(section.id);
+  //       if (el) {
+  //         const rect = el.getBoundingClientRect();
+  //         if (rect.top <= 120 && rect.bottom > 120) {
+  //           current = section.id;
+  //           break;
+  //         }
+  //       }
+  //     }
+  //     setActiveSection(current);
+  //   };
+  //   window.addEventListener("scroll", handleScroll, { passive: true });
+  //   handleScroll();
+  //   return () => window.removeEventListener("scroll", handleScroll);
+  // }, [location.pathname]);
 
   return (
     <Navbar bg="dark" variant="dark" expand="sm" fixed="top" className="px-3">
@@ -72,7 +72,6 @@ const NavigationBar = () => {
               <Nav.Link
                 key={section.id}
                 href={`#${section.id}`}
-                active={activeSection === section.id}
                 onClick={handleNavClick(section.id)}
                 style={{ cursor: "pointer" }}
               >
