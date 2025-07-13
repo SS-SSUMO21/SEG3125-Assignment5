@@ -7,6 +7,7 @@ import {
 } from "recharts";
 import { FormControl, InputLabel, Select, MenuItem, Box, Typography, FormControlLabel, Checkbox, FormGroup   } from "@mui/material";
 
+import { useTranslation } from "../components/useTranslation";
 
 const seriesOptions = [
   { value: "One Piece", label: "One Piece" },
@@ -25,6 +26,7 @@ const Home = () => {
   const [showXAxisLine, setShowXAxisLine] = useState(true);
   const [showYAxisLine, setShowYAxisLine] = useState(true);
   const [showGridLine, setShowGridLine] = useState(true);
+  const { t } = useTranslation();
 
 
   const filteredData = salesData.filter(d => d.name === series);
@@ -74,14 +76,15 @@ return (
           }}
         />
         <Box sx={{ position: "relative", zIndex: 2, width: "100%", display: "flex", flexDirection: "column", alignItems: "center" }}>
-          <Typography variant="h4" gutterBottom sx={{ textAlign: "center", color: "#fff" }}>
-            Sales from 2015 to 2025 for:
-          </Typography>
+        <Typography variant="h4" gutterBottom sx={{ textAlign: "center", color: "#fff" }}>
+          {t("salesTitle")}
+        </Typography>
+
           <FormControl sx={{ minWidth: 200 }}>
-            <InputLabel sx={{ color: "#fff" }}>Series</InputLabel>
+            <InputLabel sx={{ color: "#fff" }}>{t("series")}</InputLabel>
             <Select
               value={series}
-              label="Series"
+              label= {t("series")}
               onChange={e => setSeries(e.target.value)}
               sx={{ color: "#fff", backgroundColor: "rgba(0,0,0,0.3)" }}
               MenuProps={{
@@ -102,22 +105,26 @@ return (
       </Box>
       {/* Bar Chart Container */}
       <Box id="yearlyComparison" sx={{ border: 1, borderRadius: 2, p: 2, mb: 4, bgcolor: "#fff", boxShadow: 2 }}>
-        <Typography variant="h6" gutterBottom sx={{ textAlign: "center" }}>
-          Yearly Sales Comparison
-        </Typography>
+      <Typography variant="h6" gutterBottom sx={{ textAlign: "center" }}>
+        {t("yearlyComparison")}
+      </Typography>
+
         <FormGroup row sx={{ justifyContent: "center", mb: 2 }}>
           <FormControlLabel
             control={<Checkbox checked={showXAxis} onChange={() => setShowXAxis(!showXAxis)} />}
-            label="X Axis"
+            label={t("xAxis")}
           />
+
           <FormControlLabel
             control={<Checkbox checked={showYAxis} onChange={() => setShowYAxis(!showYAxis)} />}
-            label="Y Axis"
+            label={t("yAxis")}
           />
+
           <FormControlLabel
             control={<Checkbox checked={showGrid} onChange={() => setShowGrid(!showGrid)} />}
-            label="Gridlines"
+            label={t("gridlines")}
           />
+
         </FormGroup>
         <ResponsiveContainer width="100%" height={300}>
           {filteredData.length > 0 ? (
@@ -128,7 +135,7 @@ return (
                   stroke="#000"
                   strokeWidth={2}
                   dataKey="year"
-                  label={{ value: "Year", position: "insideBottom", offset: -5, style: { fill: "#000" } }}
+                  label={{ value: t("year"), position: "insideBottom", offset: -5, style: { fill: "#000" } }}
                   
                 />
               )}
@@ -137,7 +144,7 @@ return (
                   stroke="#000"
                   strokeWidth={2}
                   label={{
-                    value: "Sales (in thousands)",
+                    value: t("salesInThousands"),
                     angle: -90,
                     position: "insideLeft",
                     dx: -3,
@@ -160,20 +167,23 @@ return (
       {/* Line Chart Container */}
       <Box id="salesOverTime" sx={{ border: 1, borderRadius: 2, p: 2, bgcolor: "#fff", boxShadow: 2 }}>
         <Typography variant="h6" gutterBottom sx={{ textAlign: "center" }}>
-          Sales Trend Over Time
+          {t("salesTrend")}
         </Typography>
+
         <FormGroup row sx={{ justifyContent: "center", mb: 2 }}>
           <FormControlLabel
-            control={<Checkbox checked={showXAxisLine} onChange={() => setShowXAxisLine(!showXAxisLine)} />}
-            label="X Axis"
+            control={<Checkbox checked={showXAxis} onChange={() => setShowXAxis(!showXAxis)} />}
+            label={t("xAxis")}
           />
+
           <FormControlLabel
-            control={<Checkbox checked={showYAxisLine} onChange={() => setShowYAxisLine(!showYAxisLine)} />}
-            label="Y Axis"
+            control={<Checkbox checked={showYAxis} onChange={() => setShowYAxis(!showYAxis)} />}
+            label={t("yAxis")}
           />
+
           <FormControlLabel
-            control={<Checkbox checked={showGridLine} onChange={() => setShowGridLine(!showGridLine)} />}
-            label="Gridlines"
+            control={<Checkbox checked={showGrid} onChange={() => setShowGrid(!showGrid)} />}
+            label={t("gridlines")}
           />
         </FormGroup>
 
@@ -186,7 +196,7 @@ return (
                   stroke="#000"
                   strokeWidth={2}
                   dataKey="year"
-                  label={{ value: "Year", position: "insideBottom", offset: -5, style: { fill: "#000" } }}
+                  label={{ value: t("year"), position: "insideBottom", offset: -5, style: { fill: "#000" } }}
                 />
               )}
               {showYAxisLine && (
@@ -194,7 +204,7 @@ return (
                   stroke="#000"
                   strokeWidth={2}
                   label={{
-                    value: "Sales (in thousands)",
+                    value: t("salesInThousands"),
                     angle: -90,
                     position: "insideLeft",
                     dx: -3,

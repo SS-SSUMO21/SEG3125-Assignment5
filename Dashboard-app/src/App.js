@@ -3,9 +3,11 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Container } from "react-bootstrap";
 import Home from "./pages/Home";
 import NotFound from "./pages/NotFound";
+import { LanguageProvider, useTranslation } from "./components/useTranslation";
 import "bootstrap/dist/css/bootstrap.min.css";
 
-function App() {
+function AppContent() {
+  const { t } = useTranslation();
   return (
     <>
       <Router>
@@ -19,10 +21,17 @@ function App() {
         style={{ height: "48px" }}
       >
         <Container className="text-center m-0 p-0">
-          The data presented here is entirely fictional and is generated using ChatGPT, and should not be considered accurate information.
+          {t("footerNote")}
         </Container>
       </footer>
     </>
+  );
+}
+function App() {
+  return (
+    <LanguageProvider>
+      <AppContent />
+    </LanguageProvider>
   );
 }
 

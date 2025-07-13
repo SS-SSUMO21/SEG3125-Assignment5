@@ -1,16 +1,21 @@
 import React, { useEffect, useState } from "react";
 import { Navbar, Nav, Dropdown, Container } from "react-bootstrap";
 import { Link, useLocation, useNavigate } from "react-router-dom";
+import { useTranslation } from "../components/useTranslation";
+
 
 const sections = [
-  { id: "yearlyComparison", label: "Yearly Comparison" },
-  { id: "salesOverTime", label: "Sales Over Time" },
+  { id: "yearlyComparison", labelKey: "yearlyComparison" },
+  { id: "salesOverTime", labelKey: "salesTrend" }
 ];
+
 
 const NavigationBar = () => {
   const [activeSection, setActiveSection] = useState("");
   const location = useLocation();
   const navigate = useNavigate();
+  const { language, setLanguage, t } = useTranslation();
+
 
   // Scroll to section with offset for fixed navbar
   const scrollToSection = (id) => {
@@ -59,7 +64,7 @@ const NavigationBar = () => {
     <Navbar bg="dark" variant="dark" expand="sm" fixed="top" className="px-3">
       <Container fluid>
         <Navbar.Brand as={Link} to="/" className="mb-0 text-light fw-bold fs-4">
-          Manga Sales Dashboard
+          {t("dashboardTitle")}
         </Navbar.Brand>
         <div className="d-flex align-items-center ms-auto">
           <Nav variant="pills" className="align-items-center me-4">
@@ -71,11 +76,11 @@ const NavigationBar = () => {
                 onClick={handleNavClick(section.id)}
                 style={{ cursor: "pointer" }}
               >
-                {section.label}
+                {t(section.labelKey)}
               </Nav.Link>
             ))}
           </Nav>
-          <Dropdown onSelect={(lang) => console.log("Selected language:", lang)} className="ms-2">
+          <Dropdown onSelect={(lang) => setLanguage(lang)} className="ms-2">
             <Dropdown.Toggle variant="light" className="rounded-pill p-2 fw-bold" style={{ fontSize: "0.85rem" }}>
                Language
             </Dropdown.Toggle>
