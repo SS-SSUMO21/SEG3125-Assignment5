@@ -19,7 +19,7 @@ function App() {
         style={{ height: "48px" }}
       >
         <Container className="text-center m-0 p-0">
-          Samarventhan Surendran
+          The data presented here is entirely fictional and is generated using ChatGPT, and should not be considered accurate information.
         </Container>
       </footer>
     </>

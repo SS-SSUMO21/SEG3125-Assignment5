@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Navbar, Nav, Button, Container } from "react-bootstrap";
+import { Navbar, Nav, Dropdown, Container } from "react-bootstrap";
 import { Link, useLocation, useNavigate } from "react-router-dom";
 
 const sections = [
@@ -59,7 +59,7 @@ const NavigationBar = () => {
     <Navbar bg="dark" variant="dark" expand="sm" fixed="top" className="px-3">
       <Container fluid>
         <Navbar.Brand as={Link} to="/" className="mb-0 text-light fw-bold fs-4">
-          Dashboard
+          Manga Sales Dashboard
         </Navbar.Brand>
         <div className="d-flex align-items-center ms-auto">
           <Nav variant="pills" className="align-items-center me-4">
@@ -75,16 +75,15 @@ const NavigationBar = () => {
               </Nav.Link>
             ))}
           </Nav>
-          <Button
-            variant="light"
-            as={Link}
-            to="/book"
-            className="ms-2 rounded-pill p-2 fw-bold"
-            style={{ fontSize: "0.85rem" }}
-          >
-            <i class="bi bi-gear-fill"></i>
-            &nbsp; Book Repair
-          </Button>
+          <Dropdown onSelect={(lang) => console.log("Selected language:", lang)} className="ms-2">
+            <Dropdown.Toggle variant="light" className="rounded-pill p-2 fw-bold" style={{ fontSize: "0.85rem" }}>
+               Language
+            </Dropdown.Toggle>
+            <Dropdown.Menu>
+              <Dropdown.Item eventKey="en">English</Dropdown.Item>
+              <Dropdown.Item eventKey="fr">Français</Dropdown.Item>
+            </Dropdown.Menu>
+          </Dropdown>
         </div>
       </Container>
     </Navbar>
