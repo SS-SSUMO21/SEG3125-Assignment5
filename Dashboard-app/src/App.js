@@ -34,5 +34,4 @@ function App() {
     </LanguageProvider>
   );
 }
-
 export default App;
